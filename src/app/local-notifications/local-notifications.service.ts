@@ -5,26 +5,37 @@ import { LocalNotifications } from 'ionic-native';
 export class LocalNotificationsService {
 
   scheduleWithDefaultIcon() {
+    const newDate = new Date();
+    newDate.setMinutes(newDate.getMinutes() + 1);
+
     // Will show the small icon only if you have it stored in the res/drawable-* folders as ic_popup_reminder.png
     // If you don't have those images in those folders you will get the default bell icon.
     LocalNotifications.schedule({
       id: 1,
       text: 'No icon set, will use default if present',
-      data: { testData: "ABC" }
+      data: { testData: "ABC" },
+      at: newDate
     });
   }
 
   scheduleResourceIcon() {
+    const newDate = new Date();
+    newDate.setMinutes(newDate.getMinutes() + 1);
+
     // Here we specify the icon as a specific png file in a specific res drawable folder.  This will work as well.
     LocalNotifications.schedule({
       id: 2,
       text: 'Resource icon',
       data: { testData: "ABC" },
-      icon: 'res://drawable-hdpi/icon.png'
+      icon: 'res://drawable-hdpi/icon.png',
+      at: newDate
     });
   }
 
   scheduleResourceLargeAndSmallIcons() {
+    const newDate = new Date();
+    newDate.setMinutes(newDate.getMinutes() + 1);
+
     // Here we set both the icon and the small icon, this is the only way to get a large icon.
     // If you only put icon, it will become the small icon.
     LocalNotifications.schedule({
@@ -32,7 +43,8 @@ export class LocalNotificationsService {
       text: 'Large and small icons',
       data: { testData: "ABC" },
       icon: 'res://drawable-hdpi/icon.png',
-      smallIcon: 'res://drawable-hdpi/icon.png'
+      smallIcon: 'res://drawable-hdpi/icon.png',
+      at: newDate
     });
   }
 
@@ -50,6 +62,9 @@ export class LocalNotificationsService {
   //}
 
   scheduleFileIcon() {
+    const newDate = new Date();
+    newDate.setMinutes(newDate.getMinutes() + 1);
+
     // If you want to serve your large image from the file system you can!
     // But you must serve the small icon from the res folder.
     LocalNotifications.schedule({
@@ -57,18 +72,23 @@ export class LocalNotificationsService {
       text: 'Icon from file',
       data: { testData: "ABC" },
       icon: 'file://assets/icon/icon-small.png',
-      smallIcon: 'res://drawable-hdpi/icon.png'
+      smallIcon: 'res://drawable-hdpi/icon.png',
+      at: newDate
     });
   }
 
   scheduleWithSound() {
+    const newDate = new Date();
+    newDate.setMinutes(newDate.getMinutes() + 1);
+
     LocalNotifications.schedule({
       id: 5,
       text: 'Custom sound',
       data: { testData: "ABC" },
       icon: 'file://assets/icon/icon-small.png',
       smallIcon: 'res://drawable-hdpi/icon.png',
-      sound: 'file://assets/sound/sound-effect.mp3'
+      sound: 'file://assets/sound/sound-effect.mp3',
+      at: newDate
     });
   }
 
