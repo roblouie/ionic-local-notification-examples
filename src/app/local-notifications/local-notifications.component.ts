@@ -11,6 +11,7 @@ import { LocalNotificationsService } from './local-notifications.service';
 export class LocalNotificationsPage {
 
   constructor(public navCtrl: NavController, private localNotificationsService: LocalNotificationsService) {
+    this.localNotificationsService.detectEnteringFromNotification();
   }
 
   scheduleNotificationWithDefaultIcon() {
@@ -25,12 +26,20 @@ export class LocalNotificationsPage {
     this.localNotificationsService.scheduleNotificationResourceLargeAndSmallIcons();
   }
 
-  scheduleNotificationResourceIconAndCustomColor() {
-    this.localNotificationsService.scheduleNotificationResourceIconAndCustomColor();
+  //scheduleNotificationResourceIconAndCustomColor() {
+  //  this.localNotificationsService.scheduleNotificationResourceIconAndCustomColor();
+  //}
+
+  scheduleNotificationFileIcon() {
+    this.localNotificationsService.scheduleNotificationFileIcon();
   }
 
-  scheduleNotificationFileIconAndCustomColor() {
-    this.localNotificationsService.scheduleNotificationFileIconAndCustomColor();
+  scheduleNotificationWithSound() {
+    this.localNotificationsService.scheduleNotificationWithSound();
+  }
+
+  scheduleRepeatingNotification() {
+    this.localNotificationsService.scheduleRepeatingNotification();
   }
 
 }
