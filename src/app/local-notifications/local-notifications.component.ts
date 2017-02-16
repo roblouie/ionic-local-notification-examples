@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
 import { LocalNotificationsService } from './local-notifications.service';
 
 @Component({
@@ -10,36 +9,32 @@ import { LocalNotificationsService } from './local-notifications.service';
 })
 export class LocalNotificationsPage {
 
-  constructor(public navCtrl: NavController, private localNotificationsService: LocalNotificationsService) {
+  constructor(private localNotificationsService: LocalNotificationsService) {
     this.localNotificationsService.detectEnteringFromNotification();
   }
 
-  scheduleNotificationWithDefaultIcon() {
-    this.localNotificationsService.scheduleNotificationWithDefaultIcon();
+  scheduleWithDefaultIcon() {
+    this.localNotificationsService.scheduleWithDefaultIcon();
   }
 
-  scheduleNotificationResourceIcon() {
-    this.localNotificationsService.scheduleNotificationResourceIcon();
+  scheduleResourceIcon() {
+    this.localNotificationsService.scheduleResourceIcon();
   }
 
-  scheduleNotificationResourceLargeAndSmallIcons() {
-    this.localNotificationsService.scheduleNotificationResourceLargeAndSmallIcons();
+  scheduleResourceLargeAndSmallIcons() {
+    this.localNotificationsService.scheduleResourceLargeAndSmallIcons();
   }
 
   //scheduleNotificationResourceIconAndCustomColor() {
-  //  this.localNotificationsService.scheduleNotificationResourceIconAndCustomColor();
+  //  this.localNotificationsService.scheduleResourceIconAndCustomColor();
   //}
 
-  scheduleNotificationFileIcon() {
-    this.localNotificationsService.scheduleNotificationFileIcon();
+  scheduleFileIcon() {
+    this.localNotificationsService.scheduleFileIcon();
   }
 
-  scheduleNotificationWithSound() {
-    this.localNotificationsService.scheduleNotificationWithSound();
-  }
-
-  scheduleRepeatingNotification() {
-    this.localNotificationsService.scheduleRepeatingNotification();
+  scheduleWithSound() {
+    this.localNotificationsService.scheduleWithSound();
   }
 
 }

@@ -1,35 +1,37 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Local Notifications - Media
+      Local Notifications
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
+  <h1>Media and Data</h1>
+
   <p>Triggers a local notification with no icons set.  If you have ic_popup_reminder.png in all your res/drawable-* folders
   that will be used.  Otherwise you will get the default bell icon.
   </p>
-  <button ion-button (click)="scheduleNotificationWithDefaultIcon()">Default Icon</button>
+  <button ion-button (click)="scheduleWithDefaultIcon()">Default Icon</button>
 
   <p>Sets the icon to be a specific file in a specific folder in the res folder.  Since small icons are <em>required</em>
   for notifications, if you only set a single icon it will be treated as the small icon.  This means it will also be
   turned into a single color icon with transparency.</p>
-  <button ion-button class="button" (click)="scheduleNotificationResourceIcon()">Resource Icon</button>
+  <button ion-button class="button" (click)="scheduleResourceIcon()">Resource Icon</button>
 
   <p>Here we set both the large and the small icons.  The small icon as always is turned to a single color icon with
   transparency, but the large icon will remain full color.  You can only have a large icon if you also have a small one.</p>
-  <button ion-button (click)="scheduleNotificationResourceLargeAndSmallIcons()">Large and Small Icons</button>
+  <button ion-button (click)="scheduleResourceLargeAndSmallIcons()">Large and Small Icons</button>
 
   <!--<p><strong>This won't work in the current verion of ionic native.</strong>This lets you set the color of the small icon.-->
   <!--This currently isn't supported in Ionic Native, but I've added support for it locally.</p>-->
-  <!--<button ion-button class="button" (click)="scheduleNotificationResourceIconAndCustomColor()">Resource Icons and Custom Color</button>-->
+  <!--<button ion-button class="button" (click)="scheduleResourceIconAndCustomColor()">Resource Icons and Custom Color</button>-->
 
   <p>Small and large icons again, but this time using an image in the assets folder for the large icon instead of using
   a resource.  <strong>You can only do this for the large icon, small icon is res only.</strong></p>
-  <button ion-button (click)="scheduleNotificationFileIcon()">File Icons</button>
+  <button ion-button (click)="scheduleFileIcon()">File Icons</button>
 
   <p>Plays a custom sound effect when the notification triggers.</p>
-  <button ion-button (click)="scheduleNotificationWithSound()">Custom Sound</button>
+  <button ion-button (click)="scheduleWithSound()">Custom Sound</button>
 </ion-content>
